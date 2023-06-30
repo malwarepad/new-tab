@@ -15,7 +15,12 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    await limiter.check(res, 3, "CACHE_TOKEN");
+    if (!req.headers["x-forwarded-for"])
+      return res.send({
+        success: false,
+        msg: '"X-Forwarded-For" header not defined!',
+      });
+    await limiter.check(res, 3, req.headers["x-forwarded-for"] as string);
     if (req.method === "GET") {
     } else if (req.method === "POST") {
       const { username, password } = req.body;
