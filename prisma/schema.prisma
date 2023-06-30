@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Link {
+  id        Int    @id @default(autoincrement())
+  order     Int
+  creator   User   @relation(fields: [creatorId], references: [id])
+  creatorId Int
+  icon      String
+  label     String
+  uri       String
+}
+
+model User {
+  id           Int            @id @default(autoincrement())
+  createdAt    DateTime       @default(now())
+  username     String
+  password     String
+  role         Int // 3 -> admin, 2 -> user, 1 -> previewer
+  links        Link[]
+  UserSettings UserSettings[]
+}
+
+model Invite {
+  id     Int     @id @default(autoincrement())
+  token  String  @default(uuid())
+  active Boolean @default(true)
+}
+
+model GlobalSettings {
+  id    Int    @id @default(autoincrement())
+  key   String @unique
+  value String
+}
+
+model UserSettings {
+  id    Int    @id @default(autoincrement())
+  key   String @unique
+  value String
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+}

@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Arial";
+  src: url("/Arial/Arial.eot");
+  src: local("Arial"), url("/Arial/Arial.woff") format("woff"),
+    url("/Arial/Arial.ttf") format("truetype");
+}
+
+body {
+  font-family: "Arial" !important;
+  font-size: 0.813rem;
+}
