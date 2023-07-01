@@ -49,6 +49,7 @@ export default function Home({
     <userContext.Provider value={user}>
       <Head>
         <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <title>{process.env.NEXT_PUBLIC_NAME}</title>
       </Head>
       <main
         className="h-screen text-white flex flex-col"

@@ -32,6 +32,7 @@ export default function Login() {
     <div className="flex h-screen items-center justify-end bg-[url(https://picsum.photos/1920/1080/?random)] bg-no-repeat bg-fixed bg-center">
       <Head>
         <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <title>Login - {process.env.NEXT_PUBLIC_NAME}</title>
       </Head>
       <form
         className={`bg-[#35363a]/75 h-full text-white ${inter.className} flex flex-col gap-2 justify-center px-5`}
