@@ -7,19 +7,15 @@ services:
     ports:
       - "80:3000"
     restart: always
-    volumes:
-      - persistant:/app/data
   db:
-    image: mysql
+    image: postgres
     restart: always
     environment:
-      MYSQL_DATABASE: "newtab"
-      #MYSQL_USER: "root"
-      #MYSQL_PASSWORD: "password"
-      MYSQL_ROOT_PASSWORD: "password"
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DATABASE: newtab
     volumes:
-      - db:/var/lib/mysql
+      - db:/var/lib/postgresql/data
 
 volumes:
-  persistant:
   db:
