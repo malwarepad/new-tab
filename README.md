@@ -23,7 +23,7 @@ Now just use this command to build and use this thing:
 - [NextJS](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Prisma](https://prisma.io/)
-- [SQLite](https://www.sqlite.org/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 ## Contributions
 
