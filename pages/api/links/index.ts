@@ -82,7 +82,7 @@ export default async function handler(
           //   ).order + 1
           // : 0,
           icon: file
-            ? `/uploads/${file.filename}`
+            ? `/api/public/uploads/${file.filename}`
             : `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${uri}&size=50`,
           label,
           uri,
