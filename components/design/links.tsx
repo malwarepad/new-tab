@@ -66,13 +66,29 @@ export function LinkComponent({
 
   const handleLeft = async () => {
     const request = await axios
-      .patch(`/api/links/manage`, { id, left: true })
+      .patch(
+        `/api/links/manage`,
+        { id, left: true },
+        {
+          headers: {
+            Authorization: `Bearer ${token.token}`,
+          },
+        }
+      )
       .catch((e) => undefined);
     if (request?.data?.success) router.replace(router.asPath);
   };
   const handleRight = async () => {
     const request = await axios
-      .patch(`/api/links/manage`, { id, left: false })
+      .patch(
+        `/api/links/manage`,
+        { id, left: false },
+        {
+          headers: {
+            Authorization: `Bearer ${token.token}`,
+          },
+        }
+      )
       .catch((e) => undefined);
     if (request?.data?.success) router.replace(router.asPath);
   };
