@@ -52,7 +52,7 @@ export default function Home({
         <title>{process.env.NEXT_PUBLIC_NAME}</title>
       </Head>
       <main
-        className="h-screen text-white flex flex-col"
+        className="min-h-screen text-white flex flex-col"
         style={{
           background:
             user.UserSettings.find((o) => o.key === "BgColor")?.value ||
