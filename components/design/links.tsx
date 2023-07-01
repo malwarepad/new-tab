@@ -122,7 +122,7 @@ export function LinkComponent({
             onClick={onClick || (() => {})}
           >
             <div className="bg-[#202124] p-3 rounded-full my-4 aspect-square">
-              <img
+              <Image
                 src={icon}
                 width={25}
                 height={25}
