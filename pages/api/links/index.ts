@@ -128,7 +128,7 @@ export default async function handler(
           label,
           uri,
           icon: file
-            ? `/uploads/${file.filename}`
+            ? `/api/public/uploads/${file.filename}`
             : `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${uri}&size=50`,
         },
       });
